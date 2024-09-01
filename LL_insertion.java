@@ -16,8 +16,11 @@ class LL_insertion {
         int[] arr = {1, 2, 3, 4, 5, 6, 7};
         Node head = convertArr2LL(arr);
         print(insertHead(head, 12));
+        System.out.println();
         print(insertTail(head, 21));
+        System.out.println();
         print(insertK(head, 33, 5));
+        System.out.println();
         print(insertBeforeElement(head, 17, 7));
     }
 
@@ -91,12 +94,13 @@ class LL_insertion {
         }
         Node temp = head;
         while (temp.next != null) {
-            if (temp.next.data == element);
+            if (temp.next.data == element) {
             Node n = new Node(value, temp.next);
             temp.next = n;
             break;
+            }
+            temp = temp.next;
         }
-        temp = temp.next;
         return head;
     }
 }
