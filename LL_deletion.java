@@ -16,9 +16,13 @@ public class LL_deletion {
         int[] arr = {12, 23, 34, 45, 56, 67};
         Node head = convertArr2LL(arr);
         print(head);
+        System.out.println();
         print(removeHead(head));
+        System.out.println();
         print(removeTail(head));
+        System.out.println();
         print(removeK(head, 3));
+        System.out.println();
         print(removeElement(head, 23));
     }
 
