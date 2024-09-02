@@ -18,7 +18,13 @@ class Node {
 
 public class DLL {
     public static void main(String[] args) {
-        
+        int[] arr = {23, 21, 56, 67, 93, 54};
+        Node head = convertArr2DLL(arr);
+        print(deleteHead(head));
+        System.out.println();
+        print(deleteTail(head));
+        System.out.println();
+        print(removeKthElement(head, 4));
     }
 
     private static Node convertArr2DLL(int[] arr) {
@@ -44,6 +50,56 @@ public class DLL {
     }
 
     private static Node deleteTail(Node head) {
-        
+        if (head == null || head.next == null) {
+            return null;
+        }
+        Node tail = head;
+        while (tail.next != null) {
+            tail = tail.next;
+        }
+        Node newTail = tail.back;
+        newTail.next = null;
+        tail.back = null;
+
+        return head;
+    }
+
+    private static Node removeKthElement(Node head, int k) {
+        if (head == null) {
+            return null;
+        }
+        int count = 0;
+        Node knode = head;
+        while (knode != null) {
+            count++;
+            if (count == k) break;
+            knode = knode.next;
+        }
+        Node prev = knode.back;
+        Node front = knode.next;
+
+        if (prev == null && front == null) {
+            return null;
+        }
+        else if (prev == null) {
+            return deleteHead(head);
+        }
+        else if (front == null) {
+            return deleteTail(head);
+        }
+        prev.next = front;
+        front.back = prev;
+        knode.next = null;
+        knode.back = null;
+
+        return head;
+    }
+
+    private static void print(Node head) {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
     }
 }
