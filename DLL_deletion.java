@@ -16,15 +16,17 @@ class Node {
     }
 } 
 
-public class DLL {
+public class DLL_deletion {
     public static void main(String[] args) {
         int[] arr = {23, 21, 56, 67, 93, 54};
         Node head = convertArr2DLL(arr);
-        print(deleteHead(head));
-        System.out.println();
-        print(deleteTail(head));
-        System.out.println();
-        print(removeKthElement(head, 4));
+        // print(deleteHead(head));
+        // System.out.println();
+        // print(deleteTail(head));
+        // System.out.println();
+        // print(removeKthElement(head, 4));
+        deleteNode(head.next);
+        print(head);
     }
 
     private static Node convertArr2DLL(int[] arr) {
@@ -93,6 +95,21 @@ public class DLL {
         knode.back = null;
 
         return head;
+    }
+
+    private static void deleteNode(Node temp) {
+        Node prev = temp.back;
+        Node front = temp.next;
+        if (front == null) {
+            prev.next = null;
+            temp.back = null;
+        }
+
+        prev.next = front;
+        front.back = prev;
+
+        temp.next = null;
+        temp.back = null;
     }
 
     private static void print(Node head) {
