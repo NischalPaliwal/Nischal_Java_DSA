@@ -23,7 +23,8 @@ public class DLL_insertion {
         print(insertBeforeHead(head, 11));
         print(insertBeforeTail(head, 12));
         print(insertBeforeKthElement(head, 14, 3));
-        print(insertbeforeNode(head.next.next, 7));
+        insertbeforeNode(head.next.next, 7);
+        print(head);
     }
 
     private static Node convertArr2DLL(int[] arr) {
