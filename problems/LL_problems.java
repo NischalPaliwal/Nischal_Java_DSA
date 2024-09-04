@@ -51,7 +51,32 @@ public class LL_problems {
         return last.back;
     }
 
-    
+    private static Node middle_element(Node head) {
+        // first approach
+        Node temp = head;
+        int count = 0;
+        while (temp != null) {
+            count++;
+            temp = temp.next;
+        }
+        int mid = (count / 2) + 1;
+        while (temp != null) {
+            mid--;
+            if (mid == 0) break;
+            temp = temp.next;
+        }
+        return temp;
+    }
+
+    private static Node tortoise_hare(Node head) {
+        Node fast = head;
+        Node slow = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
 
     private static Node convertArr2DLL(int[] arr) {
         Node head = new Node(arr[0]);
