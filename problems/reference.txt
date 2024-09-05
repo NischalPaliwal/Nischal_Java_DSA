@@ -1,1 +1,2 @@
 1. middle element/node of the LinkedList = (n / 2 + 1)th element.
+2. if we are asked to rotate the LinkedList by n places: if n is a multiple of the length of the LinkedList, then the LinkedList will remain as it is.

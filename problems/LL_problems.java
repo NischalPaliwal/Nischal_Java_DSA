@@ -78,6 +78,38 @@ public class LL_problems {
         return slow;
     }
 
+    private static Node rotatingLL(Node head, int k) {
+        if (head == null || k == 0) {
+            return head;
+        }
+        Node tail = head;
+        int length = 1;
+        while (tail.next != null) {
+            tail = tail.next;
+            length++;
+        }
+        if (k % length == 0) {
+            return head;
+        }
+        k = k % length;
+        tail.next = head;
+        Node newLastNode = findNthNode(head, length - k);
+        head = newLastNode.next;
+        newLastNode.next = null;
+        return head;
+    }
+
+    private static Node findNthNode(Node head, int k) {
+        int cnt = 0;
+        Node temp = head;
+        while (temp != null) {
+            cnt++;
+            if (cnt == k) return temp;
+            temp = temp.next;
+        }
+        return temp;
+    }
+
     private static Node convertArr2DLL(int[] arr) {
         Node head = new Node(arr[0]);
         Node prev = head;
