@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class recursion {
     public static void main(String[] args) {
         int[] nums = {1, 2, 3, 4, 5, 6, 7};
@@ -15,7 +17,7 @@ public class recursion {
         return arr[index] < arr[index + 1] && isSorted(arr, index + 1);
     }
 
-    // Linear search with recursion ->
+    // linear search with recursion ->
     static boolean find(int[] arr, int index, int target) {
         if (index == arr.length) {
             return false;
@@ -41,5 +43,43 @@ public class recursion {
             return index;
         }
         return findFromLast(arr, index - 1, target);
+    }
+
+    static ArrayList<Integer> find2(int[] arr, int index, int target, ArrayList<Integer> list) {
+        if (index == arr.length) {
+            return list;
+        }
+        if (arr[index] == target) {
+            list.add(index);
+        }
+        return find2(arr, index + 1, target, list);
+    }
+
+    // binary search in a rotated array ->
+    static int searchInRotated(int[] arr, int target, int start, int end) {
+        if (start > end) {
+            return -1;
+        }
+        
+        int middle = start + (end - start) / 2;
+
+        if (arr[middle] == target) {
+            return middle;
+        }
+
+        if (arr[start] <= arr[middle]) {
+            if (target >= arr[start] && target <= arr[middle]) {
+                return searchInRotated(arr, target, start, middle - 1);
+            }
+            else {
+                return searchInRotated(arr, target, middle + 1, end);
+            }
+         }
+
+         if (target >= arr[middle] && target <= arr[end]) {
+            return searchInRotated(arr, target, middle + 1, end);
+         }
+
+         return searchInRotated(arr, target, start, middle - 1);
     }
 }
