@@ -2,11 +2,16 @@ import java.util.ArrayList;
 
 public class recursion {
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 4, 5, 6, 7};
-        System.out.println(isSorted(nums, 0));
-        System.out.println(find(nums, 0, 4));
-        System.out.println(findFromStart(nums, 0, 4));
-        System.out.println(findFromLast(nums, nums.length - 1, 4));
+        // int[] nums = {1, 2, 3, 4, 5, 6, 7};
+        // System.out.println(isSorted(nums, 0));
+        // System.out.println(find(nums, 0, 4));
+        // System.out.println(findFromStart(nums, 0, 4));
+        // System.out.println(findFromLast(nums, nums.length - 1, 4));
+        ArrayList<Integer> list = new ArrayList<>();
+        int[] nums2 = {1, 2, 3, 3, 4, 5};
+        System.out.println(find2(nums2, 0, 3, list));
+        int[] nums3 = {5, 6, 7, 1, 2, 3, 4};
+        System.out.println(searchInRotated(nums3, 2, 0, nums3.length - 1));
     }
 
     // check if the array is sorted or not ->
