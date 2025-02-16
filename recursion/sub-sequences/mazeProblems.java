@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class mazeProblems {
     public static void main(String[] args) {
@@ -80,5 +81,42 @@ public class mazeProblems {
 
         maze[r][c] = true;
         return result;
+    }
+
+    public static void path_with_steps(String p, boolean[][] maze, int r, int c, int[][] path, int step) {
+        if (r == maze.length - 1 && c == maze[0].length - 1) {
+            for (int[] arr : path) {
+                System.out.println(Arrays.toString(arr));
+            }
+            System.out.println(p);
+            System.out.println();
+            return;
+        }
+
+        if (!maze[r][c]) {
+            return;
+        }
+
+        maze[r][c] = false;
+        path[r][c] = step;
+
+        if (r < maze.length - 1) {
+            path_with_steps(p + 'D', maze, r + 1, c, path, step + 1);
+        }
+
+        if (c < maze[0].length) {
+            path_with_steps(p + 'R', maze, r, c + 1, path, step + 1);
+        }
+
+        if (r > 0) {
+            path_with_steps(p + 'U', maze, r - 1, c, path, step + 1);
+        }
+
+        if (c > 0) {
+            path_with_steps(p + 'L', maze, r, c - 1, path, step + 1);
+        }
+
+        maze[r][c] = true;
+        path[r][c] = 0;
     }
 }
