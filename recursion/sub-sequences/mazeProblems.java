@@ -3,7 +3,13 @@ import java.util.ArrayList;
 public class mazeProblems {
     public static void main(String[] args) {
         // System.out.println(count(4, 4));
-        System.out.println(path("", 3, 3));
+        // System.out.println(path("", 3, 3));
+        boolean[][] bool = {
+            {true, true, true},
+            {true, true, true},
+            {true, true, true}
+        };
+        System.out.println(path_with_obs("", bool, 0, 0));
     }
 
     public static int count(int r, int c) {
@@ -41,7 +47,7 @@ public class mazeProblems {
         return res;
     }
 
-    public static ArrayList<String> path_with_obs(String p, Boolean[][] maze, int r, int c) {
+    public static ArrayList<String> path_with_obs(String p, boolean[][] maze, int r, int c) {
         if (r == maze.length - 1 && c == maze[0].length - 1) {
             ArrayList<String> list = new ArrayList<>();
             list.add(p);
