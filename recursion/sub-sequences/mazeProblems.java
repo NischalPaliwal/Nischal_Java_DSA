@@ -41,5 +41,38 @@ public class mazeProblems {
         return res;
     }
 
-    
+    public static ArrayList<String> path_with_obs(String p, Boolean[][] maze, int r, int c) {
+        if (r == maze.length - 1 && c == maze[0].length - 1) {
+            ArrayList<String> list = new ArrayList<>();
+            list.add(p);
+            return list;
+        }
+
+        if (!maze[r][c]) {
+            return new ArrayList<>();
+        }
+
+        maze[r][c] = false;
+
+        ArrayList<String> result = new ArrayList<>();
+
+        if (r < maze.length - 1) {
+            result.addAll(path_with_obs(p + 'D', maze, r + 1, c));
+        }
+
+        if (c < maze[0].length - 1) {
+            result.addAll(path_with_obs(p + 'R', maze, r, c + 1));
+        }
+
+        if (r > 0) {
+            result.addAll(path_with_obs(p + 'U', maze, r - 1, c));
+        }
+
+        if (c > 0) {
+            result.addAll(path_with_obs(p + 'L', maze, r, c - 1));
+        }
+
+        maze[r][c] = true;
+        return result;
+    }
 }
