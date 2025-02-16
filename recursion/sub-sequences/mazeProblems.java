@@ -10,7 +10,13 @@ public class mazeProblems {
             {true, true, true},
             {true, true, true}
         };
-        System.out.println(path_with_obs("", bool, 0, 0));
+        // System.out.println(path_with_obs("", bool, 0, 0));
+        int[][] path = {
+            {0, 0, 0},
+            {0, 0, 0},
+            {0, 0, 0}
+        };
+        path_with_steps("", bool, 0, 0, path, 1);
     }
 
     public static int count(int r, int c) {
@@ -104,7 +110,7 @@ public class mazeProblems {
             path_with_steps(p + 'D', maze, r + 1, c, path, step + 1);
         }
 
-        if (c < maze[0].length) {
+        if (c < maze[0].length - 1) {
             path_with_steps(p + 'R', maze, r, c + 1, path, step + 1);
         }
 
