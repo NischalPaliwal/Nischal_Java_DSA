@@ -55,7 +55,7 @@ public class NQueens {
     }
 
     public static void display(boolean[][] board) {
-        for(boolean[] row : board) {
+        for (boolean[] row : board) {
             for (boolean element : row) {
                 if (element) {
                     System.out.print("Q ");
