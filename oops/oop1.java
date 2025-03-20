@@ -2,7 +2,9 @@ package oops;
 
 public class oop1 {
     public static void main(String[] args) {
-        
+        Student[] students = new Student[5];
+        students[0] = new Student(101, "Nischal Paliwal", "3-06-2004", 20, 11, 'A');
+        // System.out.println(students[0]);
     }
 }
 
@@ -22,5 +24,5 @@ class Student {
         this.age = age;
         this.standard = standard;
         this.section = section;
-        }
+    }
 }
