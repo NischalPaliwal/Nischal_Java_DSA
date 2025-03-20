@@ -25,4 +25,12 @@ class Student {
         this.standard = standard;
         this.section = section;
     }
+
+    public Student() {
+        this ("Raghav");
+    }
+
+    public Student(String name) {
+        this.name = name;
+    }
 }
