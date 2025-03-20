@@ -20,10 +20,10 @@ public class oop1 {
         final int[] arr = {1, 2, 3, 4, 5, 6};
         arr[2] = 1;
 
-        @Override
-        protected void finalize() throws Throwable {
-            System.out.println("Object is destroyed!");
-        }
+        // @Override
+        // protected void finalize() throws Throwable {
+        //     System.out.println("Object is destroyed!");
+        // }
     }
 
     static void swap(Integer a, Integer b) {
