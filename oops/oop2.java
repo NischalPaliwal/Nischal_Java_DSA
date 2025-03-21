@@ -17,6 +17,8 @@ class oop2 {
 
     public static void main(String args[]) {
       math(32);
+      // Inside the class, static variables can be accessed by their variable name only but inside static methods only.
+      // Outside the class, they should be accessed using class name only.
       System.out.println("Value of a is " + a);
       System.out.println("Value of b is " + b);
       Test test1 = new Test("Kunal");
