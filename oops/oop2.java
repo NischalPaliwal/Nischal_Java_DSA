@@ -19,5 +19,17 @@ class oop2 {
       math(32);
       System.out.println("Value of a is " + a);
       System.out.println("Value of b is " + b);
+      Test test1 = new Test("Kunal");
+      Test test2 = new Test("Rahul");
+      System.out.println(test1.name);
+      System.out.println(test2.name);
+    }
+
+    static class Test{
+        String name;
+
+        public Test(String name) {
+            this.name = name;
+        }
     }
 }
