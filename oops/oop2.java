@@ -9,12 +9,15 @@ class oop2 {
       System.out.println("b = " + b);
     }
 
+    // executes when class is loaded into the memory
     static {
       System.out.println("Static block initialized.");
       b = a * 4;
     }
 
     public static void main(String args[]) {
-      math(42);
+      math(32);
+      System.out.println("Value of a is " + a);
+      System.out.println("Value of b is " + b);
     }
 }
