@@ -44,7 +44,7 @@ public class detectCycle1 {
         boolean[] vis = new boolean[V];
         for (int i = 0; i < vis.length; i++) vis[i] = false;
         for (int i = 0; i < vis.length; i++) {
-            if (vis[i] == false) {
+            if (!vis[i]) {
                 if (checkForCycle(i, adj, vis)) return true;
             }
         }
