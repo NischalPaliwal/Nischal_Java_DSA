@@ -19,4 +19,16 @@ public class bipartite_dfs {
 
         return true;
     }
+
+    public boolean isBipartite(int V, ArrayList<ArrayList<Integer>> adj) {
+        int[] color = new int[V];
+        for (int i = 0; i < V; i++) color[i] = -1;
+
+        for (int i = 0; i < V; i++) {
+            if (color[i] == -1) {
+                if (dfs(i, 0, color, adj) == false) return false;
+            }
+        }
+        return true;
+    }
 }
