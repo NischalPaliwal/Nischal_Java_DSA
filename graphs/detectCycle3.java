@@ -16,8 +16,8 @@ public class detectCycle3 {
                 if (dfs(neighbor, adj, vis, pathVis) == true) {
                     return true;
                 }
-            else if (pathVis[node]) return true;
             }
+            else if (pathVis[neighbor]) return true;
         }
 
         pathVis[node] = false;
@@ -33,7 +33,7 @@ public class detectCycle3 {
                 if (dfs(i, adj, vis, pathVis) == true) return true;
             }
         }
-        
+
         return false;
     }
 }
