@@ -3,7 +3,7 @@ package graphs;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class topoSort {
+public class topoSort1 {
     public static void main(String[] args) {
         
     }
