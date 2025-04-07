@@ -35,7 +35,7 @@ public class dijkstra {
                 int adjNode = adj.get(node).get(i).get(0);
                 if (w + edgeWeight < dist[adjNode]) {
                     dist[adjNode] = w + edgeWeight;
-                    pq.add(new Pair(dist[adjNode], adjNode));
+                    pq.add(new Pair(adjNode, dist[adjNode]));
                 }
             }
         }
